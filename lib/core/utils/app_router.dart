@@ -37,7 +37,7 @@ abstract class AppRouter {
       GoRoute(
         path: homeScreen,
         builder: (BuildContext context, GoRouterState state) {
-          return const HomeScreenView();
+          return  HomeScreenView();
         },
       ),
     ],

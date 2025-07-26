@@ -39,6 +39,8 @@ class _LoginScreenViewBodyState extends State<LoginScreenViewBody> {
           if (state is LoginFailure) {
             debugPrint(state.errMessage);
             customAwesomeDialog(context, message: state.errMessage);
+          } else if (state is LoginSuccess) {
+            context.go(AppRouter.homeScreen);
           }
         },
         builder: (context, state) {

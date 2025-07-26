@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:reco_genie/features/authentication/presentation/views/login_screen_view.dart';
-
-import '../../features/authentication/presentation/views/auth_screen_view.dart';
+import 'package:reco_genie/features/home/presentation/views/home_screen_view.dart';
+import '../../features/authentication/data/repos/auth_gate.dart';
 import '../../features/authentication/presentation/views/register_screen_view.dart';
 
 abstract class AppRouter {
@@ -19,7 +19,7 @@ abstract class AppRouter {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return const AuthScreenView();
+          return const AuthGate();
         },
       ),
       GoRoute(
@@ -34,10 +34,14 @@ abstract class AppRouter {
           return RegisterScreenView();
         },
       ),
+      GoRoute(
+        path: homeScreen,
+        builder: (BuildContext context, GoRouterState state) {
+          return  HomeScreenView();
+        },
+      ),
     ],
   );
 }
 
-// Map<String ,Widget> getUrlAndScreen(){
-//   se
-// }
+
